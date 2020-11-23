@@ -1,18 +1,16 @@
-{
-  "name": "te4-session23nov2020",
+  {
+  "name": "te4-session23nov",
   "version": "1.0.0",
   "description": "",
-  "main": "GetNoteByIdTest.js",
-  "dependencies": {
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0"
-  },
-  "devDependencies": {
-    "mocha": "^8.2.1"
-  },
+  "main": "maintest.js",
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1"
+  }
 }
