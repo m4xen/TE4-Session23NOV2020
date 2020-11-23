@@ -61,3 +61,18 @@ describe("Edite a note", function(){
         })
     });
 });
+
+//Create note
+describe("Create note", function(){
+    it("Createde a note", function(done){
+        chai.request(baseUrl)
+            .post("/notes/")
+            .set('content-type', 'application/x-www-form-urlencoded')
+            .send({data: JSON.stringify(notesdata)})
+            .end(function(err, res){
+                expect(res).to.have.status(200);
+              
+                done(); 
+        })
+    });
+});
