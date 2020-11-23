@@ -8,8 +8,8 @@ const baseUrl = "http://localhost:3000";
 
 const notesdata = {
         
-    "title": "AAAA",
-    "content": "Aaaaaaaaaaaaaaaaaaaa",
+    "title": "Hej",
+    "content": "Hello",
     "id": 1
     
 }; 
@@ -42,6 +42,21 @@ describe("Get all notes", function(){
 
                 expect(res.body).to.be.a("Object");
                 
+                done(); 
+        })
+    });
+});
+
+//Edite notes
+describe("Edite a note", function(){
+    it("Edited a note", function(done){
+        chai.request(baseUrl)
+            .put("/notes/" + notesdata.id)
+            .set('content-type', 'application/x-www-form-urlencoded')
+            .send({title : "Hej", content : "Hello"})
+            .end(function(err, res){
+                expect(res).to.have.status(200);
+              
                 done(); 
         })
     });
