@@ -14,6 +14,7 @@ const notesdata = {
     
 }; 
 chai.use(chaiHttp);
+chai.use(require("chai-json"));
 
 //Get a note
 describe("Get a note by id Test", function(){
@@ -32,8 +33,6 @@ describe("Get a note by id Test", function(){
 });
 
 //Get all notes
-chai.use(require("chai-json"));
-
 describe("Get all notes", function(){
     it("get all notes", function(done){
         chai.request(baseUrl)
@@ -41,7 +40,7 @@ describe("Get all notes", function(){
             .end(function(err, res){
                 expect(res).to.have.status(200);
 
-                expect(res.body).to.be.a.jsonFile();
+                expect(res.body).to.be.a("Object");
                 
                 done(); 
         })
